@@ -20,11 +20,7 @@ def search(request):
     return render(request, 'base.html', {'asset': form})
 
 
-# def detail(request, fgdzc):
-#     # fgdzc = request.POST
-#     if fgdzc in request.POST:
-#         asset = request.POST(fgdzc)
-#     else:
-#         asset = '错误的资产编号'
-#
-#     return render(request, 'detail.html', {'asset': asset})
+def all(request):
+    asset_list = Assets.objects.all()
+
+    return render(request, 'all.html', {'asset_list': asset_list})
